@@ -10,7 +10,7 @@ public class JDBC {
     static {
         try {
             minConnection = DriverManager
-                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=DAOS_Projekt;user=sa;password=2001;");
+                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=DAOS_Projekt;user=sa;password=010401;");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -21,7 +21,7 @@ public class JDBC {
 
     }
 
-    public static void opgA() {
+    public static void opgA() throws SQLException {
         //parameter for eksamensforsøg
         try {
             String studID;
@@ -36,13 +36,13 @@ public class JDBC {
 
 
 
-            String sqlStatement = "INSERT INTO Eksamensforsøg VALUES (?, ?, ?)";
-            PreparedStatement prestmt = minConnection.prepareStatement(sqlStatement);
+        String sqlStatement = "INSERT INTO Eksamensforsøg VALUES (?, ?, ?)";
+        PreparedStatement prestmt = minConnection.prepareStatement(sqlStatement);
             prestmt.setString(1, karakter);
             prestmt.setInt(2, Integer.parseInt(studID));
             prestmt.setInt(3, Integer.parseInt(afviklingsID));
 
-            prestmt.execute();
+        prestmt.execute();
 
             System.out.println("Studerende tilmeldt eksamensafvikling / Eksamensforsøg oprettet");
         }
