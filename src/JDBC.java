@@ -10,7 +10,7 @@ public class JDBC {
     static {
         try {
             minConnection = DriverManager
-                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=DAOS_Projekt;user=sa;password=2001;");
+                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=Karakterregistrering;user=sa;password=2057;");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
