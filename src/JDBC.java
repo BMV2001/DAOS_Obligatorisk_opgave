@@ -10,7 +10,7 @@ public class JDBC {
     static {
         try {
             minConnection = DriverManager
-                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=DAOS_Projekt;user=sa;password=010401;");
+                    .getConnection("jdbc:sqlserver://localhost\\SQLExpress;databaseName=DAOS_Projekt;user=sa;password=2001;");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -29,10 +29,10 @@ public class JDBC {
         studID = scan.next();
         afviklingsID = scan.next();
 
-        String sqlStatement = "INSERT INTO Eksamensforsøg VALUES (?, ?, ?)";
+        String sqlStatement = "INSERT INTO Eksamensforsøg VALUES (null, ?, ?)";
         PreparedStatement prestmt = minConnection.prepareStatement(sqlStatement);
-        prestmt.setInt(2, Integer.parseInt(studID));
-        prestmt.setInt(3, Integer.parseInt(afviklingsID));
+        prestmt.setInt(1, Integer.parseInt(studID));
+        prestmt.setInt(2, Integer.parseInt(afviklingsID));
 
         prestmt.execute();
 
