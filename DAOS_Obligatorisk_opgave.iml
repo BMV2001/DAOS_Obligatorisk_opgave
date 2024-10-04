@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SQL_JDBC4" level="application" />
+    <orderEntry type="library" name="sqlJDCB" level="application" />
   </component>
 </module>
